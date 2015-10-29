@@ -45,3 +45,19 @@ select {
 .animate.ng-leave-active{
 	opacity:0;
 }
+
+/*アップロード処理*/
+.file-upload-area {
+    padding: 20px;
+    border: 2px #DDD dashed;
+    text-align: center;
+    color: #DDD;
+    margin-bottom: 20px;
+}
+.file-upload-area input[type="file"] {
+    display: none;
+}
+.file-upload-dragover {
+    background-color: #F9F9F9;
+    opacity: 0.8;
+}

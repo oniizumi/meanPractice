@@ -4,7 +4,8 @@ var app = angular.module('meanSampleApp', [
   'ngMessages',
   'googlechart',
   'ui.bootstrap',
-  'ngAnimate'
+  'ngAnimate',
+  'ngFileUpload'
 ]);
 
 //クライアント側ルーティング処理

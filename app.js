@@ -8,10 +8,12 @@ var session       = require('express-session');
 var MongoStore    = require('connect-mongo')(session);
 var passport      = require('passport');
 var localStrategy = require('passport-local').Strategy;
+var nodemailer = require('nodemailer');
 
-//コントローラ
+// JSインポート
 var members = require('./server/api/members/members.controller.js');
 var stores = require('./server/api/stores/stores.controller.js');
+var sendMail = require('./server/common/sendMail.js');
 
 //Mongoose接続定義
 var connection = mongoose.connect('mongodb://ec2-52-22-178-90.compute-1.amazonaws.com/meanSample');
@@ -64,6 +66,7 @@ var port = process.env.port || 5555;
     app.post('/registerStore', stores.registerStore);
     app.post('/deleteStore', stores.deleteStore);
     app.post('/updateStore', stores.updateStore);
+    app.post('/sendMail', sendMail.mail);
 
 
 

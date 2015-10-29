@@ -1,6 +1,14 @@
 <div ng-controller="MembersController">
     <h1 class="page-header">Members&nbsp;&nbsp;<small>Angularの機能モック</small></h1>
     <br>
+    <!-- アラート -->
+    <div class="row">
+        <div class="container-fluid">
+            <div class="col-sm-4 col-sm-offset-4">
+                <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" class="animate alertMsg">{{alert.msg}}</uib-alert>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="container-fluid">
             <h3 class="page-header">GoogleChart</h3>
@@ -8,4 +16,49 @@
             </div>
         </div>
     </div>
-</div>
+    <div class="row">
+        <div class="container-fluid">
+            <h3 class="page-header">メール送信</h3>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <input type="text" name="toMail" class="form-control" placeholder="To" ng-model="toMail">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <input type="text" name="fromMail" class="form-control" placeholder="From" ng-model="fromMail">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <input type="text" name="subjectMail" class="form-control" placeholder="Subject" ng-model="subjectMail">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <textarea name="contentsMail" rows="8" cols="40" class="form-control" placeholder="Contents" ng-model="contentsMail"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <button type="button" name="button" class="btn btn-danger" ng-click="sendMail()">Send Mail</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container-fluid">
+            <h3 class="page-header">画像関係</h3>
+            <button type="button" name="uploadBtn" class="btn btn-default" ng-click="showModalUpload()">アップロードボタン</button>
+    </div>
+    <!-- <div class="row">
+        <div class="container-fluid">
+            <button type="button" name="button" ng-click="clickLionMan()" class="btn btn-info">雄ライオンを見る</button>
+            <button type="button" name="button" ng-click="clickLionWoman()" class="btn btn-warning">雌ライオンを見る</button>
+            <div>
+                <img ng-src="assets/img/{{imageName}}" width="500" height="400">
+            </div>
+        </div>
+    </div> -->

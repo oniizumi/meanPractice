@@ -1,28 +1,54 @@
 angular.module('meanSampleApp')
-  .controller('MembersController', ['$scope', '$http', '$stateParams', '$uibModal', function($scope, $http, $stateParams, $uibModal) {
+  .controller('MembersController', ['$scope', '$http', '$stateParams', '$uibModal', '$timeout', 'Upload', function($scope, $http, $stateParams, $uibModal, $timeout, Upload) {
 
-        $scope.lists = [
-            {name: 'list1', score: 1},
-            {name: 'list2', score: 2},
-            {name: 'list3', score: 3},
-        ];
+        $scope.alerts = [];
 
-        $scope.modalTitle = 'なひー';
+        $scope.imageName = 'lion.jpg';
 
-        $scope.showModal = function() {
-            var modalInstance = $uibModal.open({
-                templateUrl: 'app/modal/modal.registerList.html',
-                controller : 'ModalController',
-                scope: $scope
-            });
-
-            modalInstance.result.then(
-                function() {
-                    console.log('hello');
-                }
-            );
+        $scope.clickLionMan = function() {
+            $scope.imageName = 'lion.jpg';
         };
 
+        $scope.clickLionWoman = function() {
+            $scope.imageName = 'Lion_Gir.jpg';
+        };
+
+        $scope.showModalUpload = function() {
+            $uibModal.open({
+                controller: 'ModalController',
+                templateUrl: 'app/modal/modal.fileUpload.html',
+                scope: $scope,
+            });
+        };
+
+
+        //メール送信
+        $scope.sendMail = function() {
+            $http({
+                url: '/sendMail',
+                method :'POST',
+                data: {
+                    toMail: $scope.toMail,
+                    fromMail: $scope.fromMail,
+                    subjectMail: $scope.subjectMail,
+                    contentsMail: $scope.contentsMail
+                }
+            })
+            .success(function(data) {
+                $scope.alerts.push({
+                    type: 'info',
+                    msg: data
+                });
+
+                $timeout(function() {
+                    angular.element(document.getElementsByClassName('alertMsg')).fadeOut('slow', function() {
+                        $scope.alerts.splice(0, 1);
+                    });
+                },3000);
+            });
+        };
+
+        //GoogleChart表示
         $scope.data = {
               'type': 'BarChart',
               'data': {

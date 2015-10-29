@@ -20,13 +20,16 @@
   ],
   "dependencies": {
     "angular": "~1.4.7",
-    "bootswatch-dist": "3.3.0-simplex",
+    "bootswatch-dist": "3.3.0-united",
     "angular-ui-router": "~0.2.15",
     "angular-route": "~1.4.7",
     "angular-messages": "~1.4.7",
     "angular-resource": "~1.4.7",
     "angular-google-chart": "~0.0.11",
     "angular-bootstrap": "~0.14.3",
-    "angular-animate": "~1.4.7"
+    "angular-animate": "~1.4.7",
+    "flow.js": "~2.9.0",
+    "ng-file-upload": "~9.1.1",
+    "font-awesome": "fontawesome#~4.4.0"
   }
 }
