@@ -9,7 +9,6 @@ angular.module('meanSampleApp')
 
         $scope.modalTitle = 'なひー';
 
-
         $scope.showModal = function() {
             var modalInstance = $uibModal.open({
                 templateUrl: 'app/modal/modal.registerList.html',
@@ -23,7 +22,6 @@ angular.module('meanSampleApp')
                 }
             );
         };
-
 
         $scope.data = {
               'type': 'BarChart',

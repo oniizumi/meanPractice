@@ -26,9 +26,9 @@ angular.module('meanSampleApp')
       $scope.selectRow = '';
       $scope.storeName = '';
       $scope.storeTel  = '';
-      $scope.storeType  = '';
-      $scope.storeSeen  = '';
-      $scope.storeRate  = '';
+      $scope.storeType = '';
+      $scope.storeSeen = '';
+      $scope.storeRate = '';
 
       $scope.modalInstance = $uibModal.open({
           controller: 'ModalController',

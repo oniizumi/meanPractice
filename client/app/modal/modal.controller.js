@@ -19,6 +19,11 @@ angular.module('meanSampleApp')
                     type: 'info',
                     msg: '新規データを登録しました'
                 });
+                $timeout(function() {
+                    angular.element(document.getElementsByClassName('alertMsg')).fadeOut('slow', function() {
+                        $scope.alerts.splice(0, 1);
+                    });
+                },3000);
             });
         };
 
@@ -37,6 +42,11 @@ angular.module('meanSampleApp')
                     type: 'danger',
                     msg: '一件のデータを削除しました'
                 });
+                $timeout(function() {
+                    angular.element(document.getElementsByClassName('alertMsg')).fadeOut('slow', function() {
+                        $scope.alerts.splice(0, 1);
+                    });
+                },3000);
             });
         };
 
@@ -61,7 +71,11 @@ angular.module('meanSampleApp')
                     type: 'success',
                     msg: '更新が完了しました'
                 });
-
+                $timeout(function() {
+                    angular.element(document.getElementsByClassName('alertMsg')).fadeOut('slow', function() {
+                        $scope.alerts.splice(0, 1);
+                    });
+                },3000);
             });
         };
 

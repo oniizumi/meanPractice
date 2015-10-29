@@ -50,12 +50,8 @@ exports.updateStore = function(req, res) {
         data.storeType = req.body.storeType;
         data.storeSeen = req.body.storeSeen;
         data.storeRate = req.body.storeRate * 1;
+        console.log(data);
         data.save();
-
+        res.json(data);
         });
-
-    Stores.find({}, function(err, data) {
-        var data1 = data[0];
-        res.json(data1);
-    });
 };

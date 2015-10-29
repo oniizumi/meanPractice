@@ -14,7 +14,6 @@
     <script src="bower/jquery/dist/jquery.min.js" charset="utf-8"></script>
     <script src="bower/angular/angular.min.js" charset="utf-8"></script>
     <script src="bower/bootswatch-dist/js/bootstrap.min.js" charset="utf-8"></script>
-    <script src="common/commonFunction.js" charset="utf-8"></script>
     <script src="common/commonEvents.js" charset="utf-8"></script>
 
     <!-- Angular Module -->
@@ -57,10 +56,10 @@
             <div class="collapse navbar-collapse" id="xsMenu">
               <ul class="nav navbar-nav navbar-right">
                 <!-- <li><a ui-sref="todo">ToDo</a></li> -->
-                <li><a ui-sref="members">Members</a></li>
-                <li><a ui-sref="stores">Stores</a></li>
-                <li><a ui-sref="signUp">SignUp</a></li>
-                <li><a ui-sref="login">SignIn</a></li>
+                <li><a ui-sref="members" class="navList">Members</a></li>
+                <li><a ui-sref="stores" class="navList">Stores</a></li>
+                <li><a ui-sref="signUp" class="navList">SignUp</a></li>
+                <li><a ui-sref="login" class="navList">SignIn</a></li>
               </ul>
             </div>
         </div>
@@ -69,10 +68,9 @@
     <div class="container-fluid">
         <!-- テンプレートHTMLを出力 -->
         <div ui-view class="animate"></div>
-
-
     </div>
-
-  </body>
+    <!-- JS -->
     <script type="text/javascript" src="//typesquare.com/accessor/script/typesquare.js?3pf0F1KNCjI%3D" charset="utf-8"></script>
+    <script src="common/commonFunction.js" charset="utf-8"></script>
+  </body>
 </html>
