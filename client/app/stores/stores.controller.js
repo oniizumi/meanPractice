@@ -9,6 +9,14 @@ angular.module('meanSampleApp')
       $scope.stores = data;
     });
 
+    // アラート表示
+    $scope.alerts = [];
+
+     $scope.closeAlert = function(index) {
+       $scope.alerts.splice(index, 1);
+     };
+
+
     $scope.showModalRegister = function() {
       $scope.modalTitle = '新規店舗登録';
       $scope.btnClass = 'info';

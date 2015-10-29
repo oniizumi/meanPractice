@@ -15,7 +15,10 @@ angular.module('meanSampleApp')
             .success(function(data) {
                 $scope.modalInstance.dismiss();
                 $scope.stores.push(data);
-                console.log('データを登録しました');
+                $scope.alerts.push({
+                    type: 'info',
+                    msg: '新規データを登録しました'
+                });
             });
         };
 
@@ -30,7 +33,10 @@ angular.module('meanSampleApp')
             .success(function(data) {
                 $scope.modalInstance.dismiss();
                 $scope.stores.splice($scope.selectRowNo, 1);
-                console.log('データを削除しました');
+                $scope.alerts.push({
+                    type: 'danger',
+                    msg: '一件のデータを削除しました'
+                });
             });
         };
 
@@ -51,14 +57,11 @@ angular.module('meanSampleApp')
 
                 $scope.modalInstance.dismiss();
                 $scope.stores[$scope.selectRowNo] = data;
-                // if(!$scope.$$phase){
-                //     $scope.$apply(function(scope){
-                //       console.log(scope);
-                //       console.log(data);
-                //       scope.stores = data;
-                //     });
-                //     console.log($scope.stores);
-                // }
+                $scope.alerts.push({
+                    type: 'success',
+                    msg: '更新が完了しました'
+                });
+
             });
         };
 
